@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: ${DB_URL} # Environment variable for DB URL
+    username: ${DB_USERNAME} # Environment variable for username
+    password: ${DB_PASSWORD} # Environment variable for password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically update tables as per entity changes
+    show-sql: true # Display generated SQL queries in the logs
+    database-platform: org.hibernate.dialect.MySQLDialect # Optimizes Hibernate for MySQL
+  sql:
+    init:
+      platform: mysql
+      mode: always # Always run SQL scripts on application startup
+  flyway:
+    enabled: true # Enable Flyway for database migrations
+server:
+  port: 8080 # Server port
+  error:
+    include-message: always # Show error details in responses for debugging
+  servlet:
+    context-path: /api # Defines a prefix for all routes (optional)
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG # Enable debug mode to see Hibernate SQL queries
+    org.hibernate.type.descriptor.sql: TRACE # Show SQL query parameters

@@ -18,12 +18,12 @@ public interface FranchiseApi {
     @Operation(summary = "Create a new franchise")
     ResponseEntity<FranchiseModel> createFranchise(@RequestBody FranchiseModel franchiseModel);
 
-    @PutMapping
+    @PutMapping("/{id}")
     @Operation(summary = "Update the name of a franchise using its id")
     ResponseEntity<FranchiseModel> updateFranchise(@PathVariable Long id, @RequestBody UpdateNameDTO updateNameDTO);
 
     @GetMapping
     @Operation(summary = "Get all franchises")
     ResponseEntity<List<FranchiseModel>> getAllFranchises();
-    
+
 }

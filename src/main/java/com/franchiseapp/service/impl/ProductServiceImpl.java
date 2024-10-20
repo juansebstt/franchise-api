@@ -7,6 +7,11 @@ import com.franchiseapp.repositories.ProductRepository;
 import com.franchiseapp.service.ProductService;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -56,4 +61,19 @@ public class ProductServiceImpl implements ProductService {
 
         productRepository.deleteById(productId);
     }
+
+    @Override
+    public List<ProductModel> getProductsWithMostStockByFranchise(Long franchiseId) {
+        return branchRepository.findByFranchiseId(franchiseId)
+                .stream()
+                .map(branch -> {
+                    List<ProductModel> products = productRepository.findByBranchId(branch.getId());
+                    return products.stream()
+                            .max(Comparator.comparing(ProductModel::getStock))
+                            .orElse(null); // Handle case where no products exist
+                })
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+    }
+
 }

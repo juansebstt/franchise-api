@@ -25,6 +25,6 @@ public interface FranchiseApi {
 
     @GetMapping
     @Operation(summary = "Get all franchises")
-    ResponseEntity<List<FranchiseModel>> getAllFranchises();
+    ResponseEntity<List<FranchiseDTO>> getAllFranchises();
 
 }

@@ -32,7 +32,7 @@ public class FranchiseController implements FranchiseApi {
     }
 
     @Override
-    public ResponseEntity<List<FranchiseModel>> getAllFranchises() {
+    public ResponseEntity<List<FranchiseDTO>> getAllFranchises() {
         return ResponseEntity.ok(franchiseService.getAllFranchises());
     }
 }

@@ -2,7 +2,6 @@ package com.franchiseapp.service;
 
 import com.franchiseapp.commons.dtos.FranchiseDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.FranchiseModel;
 
 import java.util.List;
 
@@ -12,6 +11,6 @@ public interface FranchiseService {
 
     FranchiseDTO updateFranchiseName(Long id, UpdateNameDTO updateNameDTO);
 
-    List<FranchiseModel> getAllFranchises();
+    List<FranchiseDTO> getAllFranchises();
 
 }

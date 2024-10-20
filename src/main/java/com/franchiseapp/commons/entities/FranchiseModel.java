@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "franchise")
+@Table(name = "franchises")
 public class FranchiseModel {
 
     // Franchise model
@@ -25,5 +25,6 @@ public class FranchiseModel {
     private String name;
 
     @OneToMany(mappedBy = "franchise", cascade = CascadeType.ALL)
-    private List<Branch> branches;
+    private List<BranchModel> branches;
+
 }

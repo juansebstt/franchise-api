@@ -3,7 +3,6 @@ package com.franchiseapp.service.impl;
 import com.franchiseapp.commons.dtos.ProductDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
 import com.franchiseapp.commons.entities.ProductModel;
-import com.franchiseapp.repositories.BranchRepository;
 import com.franchiseapp.repositories.ProductRepository;
 import com.franchiseapp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, BranchRepository branchRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
@@ -91,6 +90,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getProductsWithMostStockByFranchise(Long franchiseId) {
+
         var products = productRepository.findTopProductByStockForEachBranchInFranchise(franchiseId);
 
         return products.stream()

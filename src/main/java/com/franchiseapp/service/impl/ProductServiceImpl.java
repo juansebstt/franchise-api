@@ -5,6 +5,7 @@ import com.franchiseapp.commons.entities.ProductModel;
 import com.franchiseapp.repositories.BranchRepository;
 import com.franchiseapp.repositories.ProductRepository;
 import com.franchiseapp.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -18,6 +19,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final BranchRepository branchRepository;
 
+    @Autowired
     public ProductServiceImpl(ProductRepository productRepository, BranchRepository branchRepository) {
         this.productRepository = productRepository;
         this.branchRepository = branchRepository;

@@ -2,6 +2,7 @@ package com.franchiseapp.controller;
 
 
 import com.franchiseapp.commons.constants.ApiPathConstants;
+import com.franchiseapp.commons.dtos.FranchiseDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
 import com.franchiseapp.commons.entities.FranchiseModel;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,11 +17,11 @@ public interface FranchiseApi {
 
     @PostMapping
     @Operation(summary = "Create a new franchise")
-    ResponseEntity<FranchiseModel> createFranchise(@RequestBody FranchiseModel franchiseModel);
+    ResponseEntity<FranchiseDTO> createFranchise(@RequestBody FranchiseDTO franchiseModel);
 
     @PutMapping("/{id}")
     @Operation(summary = "Update the name of a franchise using its id")
-    ResponseEntity<FranchiseModel> updateFranchise(@PathVariable Long id, @RequestBody UpdateNameDTO updateNameDTO);
+    ResponseEntity<FranchiseDTO> updateFranchise(@PathVariable Long id, @RequestBody UpdateNameDTO updateNameDTO);
 
     @GetMapping
     @Operation(summary = "Get all franchises")

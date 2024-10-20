@@ -25,8 +25,11 @@ public class ProductModel {
     @NotNull(message = "Stock quantity is required")
     private Integer stock;
 
+    @Column(name = "branch_id")
+    private Long branchId;
+
     @ManyToOne
-    @JoinColumn(name = "branch_id")
+    @JoinColumn(name = "branch_id", referencedColumnName = "id", insertable = false, updatable = false)
     private BranchModel branch;
 
 }

@@ -23,11 +23,14 @@ public class BranchModel {
     @NotBlank(message = "Branch name cannot be blank")
     private String name;
 
+    @Column(name = "franchise_id")
+    private Long franchiseId;
+
     @ManyToOne
-    @JoinColumn(name = "franchise_id")
+    @JoinColumn(name = "franchise_id", referencedColumnName = "id", insertable = false, updatable = false)
     private FranchiseModel franchise;
 
-    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ProductModel> products;
 
 }

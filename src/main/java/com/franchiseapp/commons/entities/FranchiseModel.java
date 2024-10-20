@@ -24,7 +24,7 @@ public class FranchiseModel {
     @NotBlank(message = "Franchise name cannot be blank")
     private String name;
 
-    @OneToMany(mappedBy = "franchise", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "franchise", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<BranchModel> branches;
 
 }

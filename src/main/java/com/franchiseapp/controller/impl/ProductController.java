@@ -1,7 +1,7 @@
 package com.franchiseapp.controller.impl;
 
+import com.franchiseapp.commons.dtos.ProductDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.ProductModel;
 import com.franchiseapp.controller.ProductApi;
 import com.franchiseapp.service.ProductService;
 import org.springframework.http.ResponseEntity;
@@ -19,17 +19,17 @@ public class ProductController implements ProductApi {
     }
 
     @Override
-    public ResponseEntity<ProductModel> createProduct(Long branchId, ProductModel productModel) {
-        return ResponseEntity.ok(productService.createProduct(branchId, productModel));
+    public ResponseEntity<ProductDTO> createProduct(Long branchId, ProductDTO product) {
+        return ResponseEntity.ok(productService.createProduct(branchId, product));
     }
 
     @Override
-    public ResponseEntity<ProductModel> updateProductStock(Long productId, Integer stock) {
+    public ResponseEntity<ProductDTO> updateProductStock(Long productId, Integer stock) {
         return ResponseEntity.ok(productService.updateProductStock(productId, stock));
     }
 
     @Override
-    public ResponseEntity<ProductModel> updateProductName(Long productId, UpdateNameDTO updateNameDTO) {
+    public ResponseEntity<ProductDTO> updateProductName(Long productId, UpdateNameDTO updateNameDTO) {
         return ResponseEntity.ok(productService.updateProductName(productId, updateNameDTO));
     }
 
@@ -40,7 +40,7 @@ public class ProductController implements ProductApi {
     }
 
     @Override
-    public ResponseEntity<List<ProductModel>> getProductsWithMostStockByFranchise(Long franchiseId) {
+    public ResponseEntity<List<ProductDTO>> getProductsWithMostStockByFranchise(Long franchiseId) {
         return ResponseEntity.ok(productService.getProductsWithMostStockByFranchise(franchiseId));
     }
 

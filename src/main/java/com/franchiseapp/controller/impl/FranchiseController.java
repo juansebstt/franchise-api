@@ -1,5 +1,6 @@
 package com.franchiseapp.controller.impl;
 
+import com.franchiseapp.commons.dtos.FranchiseDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
 import com.franchiseapp.commons.entities.FranchiseModel;
 import com.franchiseapp.controller.FranchiseApi;
@@ -21,12 +22,12 @@ public class FranchiseController implements FranchiseApi {
     }
 
     @Override
-    public ResponseEntity<FranchiseModel> createFranchise(FranchiseModel franchise) {
+    public ResponseEntity<FranchiseDTO> createFranchise(FranchiseDTO franchise) {
         return ResponseEntity.ok(franchiseService.createFranchise(franchise));
     }
 
     @Override
-    public ResponseEntity<FranchiseModel> updateFranchise(Long id, UpdateNameDTO updateNameDTO) {
+    public ResponseEntity<FranchiseDTO> updateFranchise(Long id, UpdateNameDTO updateNameDTO) {
         return ResponseEntity.ok(franchiseService.updateFranchiseName(id, updateNameDTO));
     }
 

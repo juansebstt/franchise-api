@@ -1,4 +1,8 @@
-package com.franchiseapp.controller;
+package com.franchiseapp.controller.impl;
 
-public class FranchiseController {
+import com.franchiseapp.controller.FranchiseApi;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FranchiseController implements FranchiseApi {
 }

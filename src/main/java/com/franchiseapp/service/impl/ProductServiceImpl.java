@@ -8,14 +8,12 @@ import com.franchiseapp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
-
+/**
+ * Implementation of the ProductService interface for managing products within branches.
+ * This service handles the business logic for creating, updating, deleting, and retrieving products.
+ */
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -26,6 +24,13 @@ public class ProductServiceImpl implements ProductService {
         this.productRepository = productRepository;
     }
 
+    /**
+     * Creates a new product associated with a specific branch.
+     *
+     * @param branchId The ID of the branch where the product belongs.
+     * @param product   The ProductDTO containing the details of the product to be created.
+     * @return The created ProductDTO, including the generated ID.
+     */
     @Override
     public ProductDTO createProduct(Long branchId, ProductDTO product) {
 
@@ -44,6 +49,14 @@ public class ProductServiceImpl implements ProductService {
                 .build();
     }
 
+    /**
+     * Updates the stock of an existing product identified by its ID.
+     *
+     * @param productId The ID of the product to be updated.
+     * @param stock     The new stock value for the product.
+     * @return The updated ProductDTO.
+     * @throws RuntimeException If the product is not found.
+     */
     @Override
     public ProductDTO updateProductStock(Long productId, Integer stock) {
         // Find the product by ID, update stock, and save
@@ -61,6 +74,14 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
 
+    /**
+     * Updates the name of an existing product identified by its ID.
+     *
+     * @param productId       The ID of the product to be updated.
+     * @param updateNameDTO   The UpdateNameDTO containing the new name for the product.
+     * @return The updated ProductDTO.
+     * @throws RuntimeException If the product is not found.
+     */
     @Override
     public ProductDTO updateProductName(Long productId, UpdateNameDTO updateNameDTO) {
 
@@ -79,6 +100,13 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found")); // Handle not found scenario
     }
 
+    /**
+     * Deletes a product identified by its ID.
+     *
+     * @param productId The ID of the product to be deleted.
+     * @throws IllegalArgumentException If the productId is null.
+     * @throws RuntimeException If the product is not found.
+     */
     @Override
     public void deleteProduct(Long productId) {
         // Validate null productId
@@ -94,6 +122,12 @@ public class ProductServiceImpl implements ProductService {
         );
     }
 
+    /**
+     * Retrieves products with the most stock for each branch within a specific franchise.
+     *
+     * @param franchiseId The ID of the franchise for which to retrieve products.
+     * @return A list of ProductDTOs representing the products with the most stock.
+     */
     @Override
     public List<ProductDTO> getProductsWithMostStockByFranchise(Long franchiseId) {
 

@@ -14,8 +14,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+/**
+ * Implementation of the FranchiseService interface for managing franchises and their branches.
+ * This service handles the business logic for creating, updating, and retrieving franchises.
+ */
 @Service
 public class FranchiseServiceImpl implements FranchiseService {
 
@@ -28,6 +31,13 @@ public class FranchiseServiceImpl implements FranchiseService {
         this.branchRepository = branchRepository;
     }
 
+    /**
+     * Creates a new franchise.
+     *
+     * @param franchise The FranchiseDTO containing the details of the franchise to be created.
+     * @return The created FranchiseDTO, including the generated ID.
+     * @throws RuntimeException If the franchise fails to save.
+     */
     @Override
     public FranchiseDTO createFranchise(FranchiseDTO franchise) {
 
@@ -38,6 +48,14 @@ public class FranchiseServiceImpl implements FranchiseService {
         return FranchiseDTO.builder().id(created.getId()).name(created.getName()).build();
     }
 
+    /**
+     * Updates the name of an existing franchise identified by its ID.
+     *
+     * @param id              The ID of the franchise to be updated.
+     * @param updateNameDTO   The UpdateNameDTO containing the new name for the franchise.
+     * @return The updated FranchiseDTO.
+     * @throws EntityNotFoundException If no franchise is found with the given ID.
+     */
     @Override
     public FranchiseDTO updateFranchiseName(Long id, UpdateNameDTO updateNameDTO) {
 
@@ -50,6 +68,11 @@ public class FranchiseServiceImpl implements FranchiseService {
         return FranchiseDTO.builder().id(franchiseModel.getId()).name(franchiseModel.getName()).build();
     }
 
+    /**
+     * Retrieves all franchises along with their branches.
+     *
+     * @return A list of FranchiseDTOs, each including its associated branches.
+     */
     @Override
     public List<FranchiseDTO> getAllFranchises() {
 

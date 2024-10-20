@@ -1,4 +1,7 @@
 package com.franchiseapp.repositories;
 
-public interface ProductRepository {
+import com.franchiseapp.commons.entities.ProductModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<ProductModel, Long> {
 }

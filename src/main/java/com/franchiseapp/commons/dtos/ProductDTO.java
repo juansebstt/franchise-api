@@ -13,6 +13,8 @@ public class ProductDTO {
 
     private Long id;
     private String name;
+    private Long branchId;
+    private Integer stock;
     private BranchDTO branch;
 
 }

@@ -1,8 +1,8 @@
 package com.franchiseapp.controller;
 
 import com.franchiseapp.commons.constants.ApiPathConstants;
+import com.franchiseapp.commons.dtos.ProductDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.ProductModel;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +14,15 @@ public interface ProductApi {
 
     @PostMapping("/{branchId}")
     @Operation(summary = "Create a new product for a branch based on its id")
-    ResponseEntity<ProductModel> createProduct(@PathVariable Long branchId, @RequestBody ProductModel productModel);
+    ResponseEntity<ProductDTO> createProduct(@PathVariable Long branchId, @RequestBody ProductDTO product);
 
     @PutMapping("/stock/{productId}")
     @Operation(summary = "Update the stock of a product")
-    ResponseEntity<ProductModel> updateProductStock(@PathVariable Long productId, @RequestParam Integer stock);
+    ResponseEntity<ProductDTO> updateProductStock(@PathVariable Long productId, @RequestParam Integer stock);
 
     @PutMapping("/name/{productId}")
     @Operation(summary = "Update the name of a product")
-    ResponseEntity<ProductModel> updateProductName(@PathVariable Long productId, @RequestBody UpdateNameDTO updateNameDTO);
+    ResponseEntity<ProductDTO> updateProductName(@PathVariable Long productId, @RequestBody UpdateNameDTO updateNameDTO);
 
     @DeleteMapping("/{productId}")
     @Operation(summary = "Delete a product")
@@ -30,6 +30,6 @@ public interface ProductApi {
 
     @GetMapping("/most-stock/{franchiseId}")
     @Operation(summary = "Get products with the most stock for a specific franchise")
-    ResponseEntity<List<ProductModel>> getProductsWithMostStockByFranchise(@PathVariable Long franchiseId);
+    ResponseEntity<List<ProductDTO>> getProductsWithMostStockByFranchise(@PathVariable Long franchiseId);
 
 }

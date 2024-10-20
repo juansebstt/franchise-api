@@ -26,7 +26,7 @@ public class ProductModel {
     private Integer stock;
 
     @Column(name = "branch_id")
-    private Long branch_id;
+    private Long branchId;
 
     @ManyToOne
     @JoinColumn(name = "branch_id", referencedColumnName = "id", insertable = false, updatable = false)

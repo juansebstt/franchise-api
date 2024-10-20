@@ -1,9 +1,9 @@
 package com.franchiseapp.service.impl;
 
-import com.franchiseapp.commons.dtos.ProductDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.ProductModel;
-import com.franchiseapp.repositories.ProductRepository;
+import com.franchiseapp.commons.dto.ProductDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
+import com.franchiseapp.commons.entity.ProductModel;
+import com.franchiseapp.repository.ProductRepository;
 import com.franchiseapp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

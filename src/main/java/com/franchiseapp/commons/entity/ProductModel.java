@@ -1,4 +1,4 @@
-package com.franchiseapp.commons.entities;
+package com.franchiseapp.commons.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

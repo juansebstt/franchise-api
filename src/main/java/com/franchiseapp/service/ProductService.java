@@ -1,7 +1,7 @@
 package com.franchiseapp.service;
 
-import com.franchiseapp.commons.dtos.ProductDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
+import com.franchiseapp.commons.dto.ProductDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
 
 import java.util.List;
 

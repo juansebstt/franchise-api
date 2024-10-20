@@ -1,9 +1,9 @@
 package com.franchiseapp.controller;
 
 
-import com.franchiseapp.commons.constants.ApiPathConstants;
-import com.franchiseapp.commons.dtos.FranchiseDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
+import com.franchiseapp.commons.constant.ApiPathConstants;
+import com.franchiseapp.commons.dto.FranchiseDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

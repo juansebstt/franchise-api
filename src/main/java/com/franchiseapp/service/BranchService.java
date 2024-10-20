@@ -1,7 +1,7 @@
 package com.franchiseapp.service;
 
-import com.franchiseapp.commons.dtos.BranchDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
+import com.franchiseapp.commons.dto.BranchDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
 
 /**
  * Service interface for managing branches within a franchise.

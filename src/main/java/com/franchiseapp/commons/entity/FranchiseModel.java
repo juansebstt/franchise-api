@@ -1,4 +1,4 @@
-package com.franchiseapp.commons.entities;
+package com.franchiseapp.commons.entity;
 
 import java.util.List;
 import jakarta.persistence.*;

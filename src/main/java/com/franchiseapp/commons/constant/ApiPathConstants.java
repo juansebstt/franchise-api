@@ -1,4 +1,4 @@
-package com.franchiseapp.commons.constants;
+package com.franchiseapp.commons.constant;
 
 /**
  * This class holds the API path constants for the Franchise application.

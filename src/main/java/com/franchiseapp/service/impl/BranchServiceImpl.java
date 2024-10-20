@@ -1,10 +1,10 @@
 package com.franchiseapp.service.impl;
 
-import com.franchiseapp.commons.dtos.BranchDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.BranchModel;
-import com.franchiseapp.repositories.BranchRepository;
-import com.franchiseapp.repositories.FranchiseRepository;
+import com.franchiseapp.commons.dto.BranchDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
+import com.franchiseapp.commons.entity.BranchModel;
+import com.franchiseapp.repository.BranchRepository;
+import com.franchiseapp.repository.FranchiseRepository;
 import com.franchiseapp.service.BranchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.franchiseapp.controller.impl;
 
-import com.franchiseapp.commons.dtos.FranchiseDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
+import com.franchiseapp.commons.dto.FranchiseDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
 import com.franchiseapp.controller.FranchiseApi;
 import com.franchiseapp.service.FranchiseService;
 import org.springframework.beans.factory.annotation.Autowired;

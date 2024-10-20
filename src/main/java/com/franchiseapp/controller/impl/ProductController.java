@@ -1,7 +1,7 @@
 package com.franchiseapp.controller.impl;
 
-import com.franchiseapp.commons.dtos.ProductDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
+import com.franchiseapp.commons.dto.ProductDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
 import com.franchiseapp.controller.ProductApi;
 import com.franchiseapp.service.ProductService;
 import org.springframework.http.ResponseEntity;

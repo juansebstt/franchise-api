@@ -1,11 +1,11 @@
 package com.franchiseapp.service.impl;
 
-import com.franchiseapp.commons.dtos.BranchDTO;
-import com.franchiseapp.commons.dtos.FranchiseDTO;
-import com.franchiseapp.commons.dtos.UpdateNameDTO;
-import com.franchiseapp.commons.entities.FranchiseModel;
-import com.franchiseapp.repositories.BranchRepository;
-import com.franchiseapp.repositories.FranchiseRepository;
+import com.franchiseapp.commons.dto.BranchDTO;
+import com.franchiseapp.commons.dto.FranchiseDTO;
+import com.franchiseapp.commons.dto.UpdateNameDTO;
+import com.franchiseapp.commons.entity.FranchiseModel;
+import com.franchiseapp.repository.BranchRepository;
+import com.franchiseapp.repository.FranchiseRepository;
 import com.franchiseapp.service.FranchiseService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

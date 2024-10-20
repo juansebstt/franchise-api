@@ -1,6 +1,6 @@
-package com.franchiseapp.repositories;
+package com.franchiseapp.repository;
 
-import com.franchiseapp.commons.entities.BranchModel;
+import com.franchiseapp.commons.entity.BranchModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

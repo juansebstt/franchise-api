@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BranchDTO {
 
+    private Long id;
     private String name;
     private Long franchiseId;
     private FranchiseDTO franchise;

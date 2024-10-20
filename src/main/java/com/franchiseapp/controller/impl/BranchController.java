@@ -1,5 +1,6 @@
 package com.franchiseapp.controller.impl;
 
+import com.franchiseapp.commons.dtos.BranchDTO;
 import com.franchiseapp.commons.dtos.UpdateNameDTO;
 import com.franchiseapp.commons.entities.BranchModel;
 import com.franchiseapp.controller.BranchApi;
@@ -13,17 +14,18 @@ public class BranchController implements BranchApi {
 
     private final BranchService branchService;
 
+    @Autowired
     public BranchController(BranchService branchService) {
         this.branchService = branchService;
     }
 
     @Override
-    public ResponseEntity<BranchModel> createBranch(Long franchiseId, BranchModel branchModel) {
-        return ResponseEntity.ok(branchService.createBranch(franchiseId, branchModel));
+    public ResponseEntity<BranchDTO> createBranch(Long franchiseId, BranchDTO branch) {
+        return ResponseEntity.ok(branchService.createBranch(franchiseId, branch));
     }
 
     @Override
-    public ResponseEntity<BranchModel> updateBranch(Long id, UpdateNameDTO updateNameDTO) {
+    public ResponseEntity<BranchDTO> updateBranch(Long id, UpdateNameDTO updateNameDTO) {
         return ResponseEntity.ok(branchService.updateBranchName(id, updateNameDTO));
     }
 

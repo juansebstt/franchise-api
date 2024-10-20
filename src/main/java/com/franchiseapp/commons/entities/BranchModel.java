@@ -24,7 +24,7 @@ public class BranchModel {
     private String name;
 
     @Column(name = "franchise_id")
-    private Long franchise_id;
+    private Long franchiseId;
 
     @ManyToOne
     @JoinColumn(name = "franchise_id", referencedColumnName = "id", insertable = false, updatable = false)

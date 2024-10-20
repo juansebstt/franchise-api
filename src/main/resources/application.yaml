@@ -20,7 +20,7 @@ server:
   error:
     include-message: always # Show error details in responses for debugging
   servlet:
-    context-path: /api # Defines a prefix for all routes (optional)
+    context-path: /api # Defines a prefix for all routes
 
 logging:
   level:

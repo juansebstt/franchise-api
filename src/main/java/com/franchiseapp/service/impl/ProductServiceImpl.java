@@ -9,7 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -84,7 +88,9 @@ public class ProductServiceImpl implements ProductService {
 
         productRepository.findById(productId).ifPresentOrElse(
                 product -> productRepository.deleteById(productId), // Delete if found
-                () -> { throw new RuntimeException("Product not found"); } // Handle not found
+                () -> {
+                    throw new RuntimeException("Product not found");
+                } // Handle not found
         );
     }
 
@@ -103,5 +109,4 @@ public class ProductServiceImpl implements ProductService {
                             .build();
                 }).toList();
     }
-
 }

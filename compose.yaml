@@ -1,10 +1,30 @@
-#services:
-#  mysql:
-#    image: 'mysql:latest'
-#    environment:
-#      - 'MYSQL_DATABASE=mydatabase'
-#      - 'MYSQL_PASSWORD=secret'
-#      - 'MYSQL_ROOT_PASSWORD=verysecret'
-#      - 'MYSQL_USER=myuser'
-#    ports:
-#      - '3306'
+version: '3.8'
+
+services:
+  franchise-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Maps port 8080 on the host to port 8080 in the container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/franchise_db  # Connect to MySQL service
+      SPRING_DATASOURCE_USERNAME: franchisetest
+      SPRING_DATASOURCE_PASSWORD: W-Ppz9%+^R^cU=suUvoItb(uoGh.u]r3
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_SQL_INIT_MODE: always
+      SPRING_FLYWAY_ENABLED: true
+      SPRING_SERVER_PORT: 8080  # Optional if you want to specify the port via environment
+    depends_on:
+      - db  # Ensure the database service starts before the app
+
+  db:
+    image: mysql:5.7  # Use MySQL version 5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: franchise_db
+      MYSQL_USER: franchisetest
+      MYSQL_PASSWORD: W-Ppz9%+^R^cU=suUvoItb(uoGh.u]r3
+      MYSQL_ROOT_PASSWORD: rootpassword  # Root password for MySQL
+    ports:
+      - "3306:3306"  # Maps port 3306 on the host to port 3306 in the container

@@ -47,14 +47,14 @@
             <optional>true</optional>
         </dependency>
 
-<!--        &lt;!&ndash; Spring Boot Docker Compose simplifies Docker support in your Spring Boot applications,-->
-<!--        making it easier to define and run multi-container Docker applications. &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-docker-compose</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <!-- Spring Boot Docker Compose simplifies Docker support in your Spring Boot applications,
+        making it easier to define and run multi-container Docker applications. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-docker-compose</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
 
         <!-- MySQL Connector/J is the official JDBC driver for MySQL,
         allowing Java applications to connect to MySQL databases. -->

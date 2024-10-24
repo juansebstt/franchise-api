@@ -45,7 +45,10 @@ public class FranchiseServiceImpl implements FranchiseService {
         var created = Optional.of(franchiseModel)
                 .map(franchiseRepository::save)
                 .orElseThrow(() -> new RuntimeException("Failed to save franchise"));
-        return FranchiseDTO.builder().id(created.getId()).name(created.getName()).build();
+        return FranchiseDTO.builder()
+                .id(created.getId())
+                .name(created.getName())
+                .build();
     }
 
     /**
@@ -65,7 +68,10 @@ public class FranchiseServiceImpl implements FranchiseService {
                     return franchiseRepository.save(franchise);
                 })
                 .orElseThrow(() -> new EntityNotFoundException("Franchise not found with id: " + id));
-        return FranchiseDTO.builder().id(franchiseModel.getId()).name(franchiseModel.getName()).build();
+        return FranchiseDTO.builder()
+                .id(franchiseModel.getId())
+                .name(franchiseModel.getName())
+                .build();
     }
 
     /**

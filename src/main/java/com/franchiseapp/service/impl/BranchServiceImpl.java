@@ -64,6 +64,9 @@ public class BranchServiceImpl implements BranchService {
                 })
                 .orElseThrow(() -> new RuntimeException("Branch not found with id: " + id));
 
-        return BranchDTO.builder().id(updated.getId()).name(updated.getName()).build();
+        return BranchDTO.builder()
+                .id(updated.getId())
+                .name(updated.getName())
+                .build();
     }
 }

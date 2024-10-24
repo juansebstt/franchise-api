@@ -38,14 +38,6 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Spring Boot DevTools provides additional development tools to enhance productivity,
-        such as automatic restarts and live reload capabilities. -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
 
         <!-- Spring Boot Docker Compose simplifies Docker support in your Spring Boot applications,
         making it easier to define and run multi-container Docker applications. -->
